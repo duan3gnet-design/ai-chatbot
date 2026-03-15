@@ -10,7 +10,9 @@ export default function ChatBox() {
     const userMsg = { role: "user", content: input };
     const newHistory = [...history, userMsg];
 
-    const res = await fetch("http://localhost:8000/chat", {
+    //https://ai-chatbot-l9e4.onrender.com
+    //http://localhost:8000
+    const res = await fetch("https://ai-chatbot-l9e4.onrender.com/chat", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ message: input, history }),
