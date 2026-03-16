@@ -30,13 +30,14 @@ npm install
 npm run dev
 
 ## 📁 Project Structure
+```
 ai-chatbot/
 ├── backend/
 │   ├── main.py
 │   └── requirements.txt
-├── frontend/
-│   ├── src/
-│   │   ├── App.jsx
-│   │   └── components/
-│   │       └── ChatBox.jsx
-└── README.md
+└── frontend/
+    └── src/
+        ├── App.jsx
+        └── components/
+            └── ChatBox.jsx
+```
