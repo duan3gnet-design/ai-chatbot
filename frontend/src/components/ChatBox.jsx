@@ -48,11 +48,11 @@ export default function ChatBox() {
           value={input}
           onChange={e => setInput(e.target.value)}
           onKeyDown={e => e.key === "Enter" && sendMessage()}
-          placeholder="Nhập tin nhắn..."
+          placeholder="Input message..."
           style={{ flex: 1, padding: 10, borderRadius: 8, border: "1px solid #ccc" }}
         />
         <button onClick={sendMessage} style={{ padding: "10px 20px", borderRadius: 8, background: "#0084ff", color: "white", border: "none" }}>
-          Gửi
+          Send
         </button>
       </div>
     </div>
