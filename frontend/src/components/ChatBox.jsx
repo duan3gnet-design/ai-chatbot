@@ -9,20 +9,23 @@ export default function ChatBox() {
 
     const userMsg = { role: "user", content: input };
     const newHistory = [...history, userMsg];
+    var limit = 3;
 
-    //https://ai-chatbot-l9e4.onrender.com
-    //http://localhost:8000
-    const res = await fetch("https://ai-chatbot-l9e4.onrender.com/chat", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ message: input, history }),
-    });
+    if (newHistory.length < limit * 2) {
+      //https://ai-chatbot-l9e4.onrender.com
+      //http://localhost:8000
+      const res = await fetch("https://ai-chatbot-l9e4.onrender.com/chat", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ message: input, history }),
+      });
 
-    const data = await res.json();
-    const botMsg = { role: "assistant", content: data.reply };
+      const data = await res.json();
+      const botMsg = { role: "assistant", content: data.reply };
 
-    setHistory([...newHistory, botMsg]);
-    setInput("");
+      setHistory([...newHistory, botMsg]);
+      setInput("");
+    } else alert(`Exceeded the limit of ${limit} queries.`)
   };
 
   return (
