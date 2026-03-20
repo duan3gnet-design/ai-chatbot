@@ -45,7 +45,7 @@ function useHealthCheck(services) {
 export default function ChatBox() {
   //http://localhost:8000
   //https://ai-chatbot-l9e4.onrender.com
-  const chatUrl = "http://localhost:8000";
+  const chatUrl = "https://ai-chatbot-l9e4.onrender.com";
   const SERVICES = [{ name: "API Gateway", url: chatUrl + "/health" }];
   const [input, setInput] = useState("");
   const [history, setHistory] = useState([]);
