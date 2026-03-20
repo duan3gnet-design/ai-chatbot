@@ -33,3 +33,8 @@ async def chat(body: Message):
     )
     return {"reply": response.message.content[0].text}
 	
+    
+@app.get("/health")
+async def health():
+    return {"status": "ok"}
+	
